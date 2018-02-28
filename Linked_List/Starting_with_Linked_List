@@ -1,0 +1,46 @@
+//In C, we can represent a node using structures. Below is an example of a linked list node with an integer data.
+#include<iostream>
+#include<cstdlib>
+
+struct Node
+{
+   int data;  
+   Node* next;
+};
+//This is blueprint of your Linked List. Now, we will be using this structure to create and manage our Linked List
+
+void printlist(struct node* a)  //Function to print the List
+{ 
+  while(a!=NULL)                 //condition to check if the last element of the list is reached
+  {
+        cout<<a->data<<endl;
+        a=a->next;
+  }
+  cout<<"this is the whole list\n";
+}
+
+
+int main()
+{
+
+   //Let us make a linked list of 3 elements for that we will use 3 pointers of Node structure
+   Node* head=NULL  //head is the first element of our list
+   Node* second=NULL;  
+   Node* third=NULL;
+   
+   //Now we will allocate free space to these pointers using malloc() function 
+   head=(struct node*)malloc(sizeof(struct node));
+   second=(struct node*)malloc(sizeof(struct node));
+   third=(struct node*)malloc(sizeof(struct node));
+   
+   
+   
+   head->data=1;        //the data part of the first element of the Linked list is given value 1
+   head->next=second;   //the next pointer of the first element points to the second element of the list
+   
+   second->data=2;
+   second->next=third;
+   third->data=3;
+   third->next=NULL;    //the next pointer of the last element points nowhere so it is given value NULL it is also used as a test to check the last element of the element
+   
+   printlist(head);
