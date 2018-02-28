@@ -1,4 +1,4 @@
-# Data_Structures_in_C-
+# Data_Structures_in_C++
 
 A Complete Knowledge of Data Structure is very important component of being a Best Programmer
 
