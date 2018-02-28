@@ -1,2 +1,5 @@
 # Data_Structures_in_C-
+
+A Complete Knowledge of Data Structure is very important component of being a Best Programmer
+
 We all know the Importance of Data Structures in Computer Science.Data structures are used in computing to make it easy to locate and retrieve information. Primitive data structures are simple ways for programming languages to represent basic values. These include data types like integer, char (character), Boolean, pointers, and the like. Non-primitive data structures provide ways of storing multiple values in a single variable. These include arrays, lists, stacks, trees, and so forth. Data structures are used in computing to make it easy to locate and retrieve information. Primitive data structures are simple ways for programming languages to represent basic values. These include data types like integer, char (character), Boolean, pointers, and the like. Non-primitive data structures provide ways of storing multiple values in a single variable. These include arrays, lists, stacks, trees, and so forth. Data structures can also be used to group and organize other data...
