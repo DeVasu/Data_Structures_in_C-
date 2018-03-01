@@ -1,0 +1,77 @@
+//There are two ways (very similar) of inserting a Node at the head of the Linked List
+
+#include<iostream>
+#include<cstdlib>
+
+using namespace std;
+
+
+struct node{
+             int data;
+             node *next;
+
+             };
+void printlist(node* a)
+{
+  while(a!=NULL)
+  {
+        cout<<a->data<<endl;
+        a=a->next;
+  }
+  cout<<"this is the whole list\n";
+}
+void insertn(int dat, struct node **a)       //this is the first function that inserts a node at the front and returns nothing
+{
+    node* newp=(node*)malloc(sizeof(node));
+    newp->data=dat;
+    newp->next=*a;
+    *a=newp;
+}
+
+//this is the second method that inserts a node at the front but it returns a struct node* pointer so we need a node variable to store what it returns
+/*
+node* insertn(int dat, node*a)
+{
+     node* newp=(node*)malloc(sizeof(node));
+     newp->data=dat;
+     newp->next=a;
+     a=newp;
+     return a;
+} 
+*/
+
+
+int main()
+{
+    struct node *head=NULL;
+    struct node *second=NULL;
+    struct node *third=NULL;
+    struct node *j=NULL;
+    head=(struct node*)malloc(sizeof(struct node));
+    second=(struct node*)malloc(sizeof(struct node));
+    third=(struct node*)malloc(sizeof(struct node));
+    j=(struct node*)malloc(sizeof(struct node));
+
+    head->data=1;
+    head->next=second;
+    second->data=2;
+    second->next=third;
+    third->data=3;
+    third->next=NULL;
+    printlist(head);
+
+    insertn(5,&head);    //call to the first function
+    printlist(head);     
+    insertn(6,&head);    //again calling the first funtion
+    printlist(head);
+    //calling the second function first we need a struct node variable where we can store what the functions return
+    /*
+      node* dummy=(struct node*)malloc(sizeof(struct node));
+      dummy=head;
+      head=insertn(5,dummy);  //notice how the arguments are passed in function 1 and 2 
+      printlist(head);
+      
+      */
+     
+    return 0;
+}
