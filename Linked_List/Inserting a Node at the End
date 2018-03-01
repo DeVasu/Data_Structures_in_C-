@@ -51,11 +51,9 @@ int main()
     struct node *head=NULL;
     struct node *second=NULL;
     struct node *third=NULL;
-    struct node *j=NULL;
     head=(struct node*)malloc(sizeof(struct node));
     second=(struct node*)malloc(sizeof(struct node));
     third=(struct node*)malloc(sizeof(struct node));
-    j=(struct node*)malloc(sizeof(struct node));
 
     head->data=1;
     head->next=second;
