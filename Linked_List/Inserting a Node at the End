@@ -1,0 +1,78 @@
+#include<iostream>
+#include<cstdlib>
+
+using namespace std;
+
+
+struct node{
+             int data;
+             node *next;
+
+             };
+void printlist(node* a)
+{
+  while(a!=NULL)
+  {
+        cout<<a->data<<endl;
+        a=a->next;
+  }
+  cout<<"this is the whole list\n";
+}
+void insertn(int dat, struct node **a)
+{
+    node* newp=(node*)malloc(sizeof(node));
+    newp->data=dat;
+    newp->next=*a;
+    *a=newp;
+}
+
+
+void insertb(node *a,int data)
+{
+    node* newp=new node;    //declaring a new pointer
+    newp->data=data;        
+    newp->next=NULL;
+    if(a==NULL) a=newp;     //if the list is empty
+
+    else{
+        node *dum=new node;
+        dum=a;
+        while(dum->next!=NULL)
+        {
+            dum=dum->next;
+        }
+        dum->next=newp;
+    }
+
+}
+
+int main()
+{
+    struct node *head=NULL;
+    struct node *second=NULL;
+    struct node *third=NULL;
+    struct node *j=NULL;
+    head=(struct node*)malloc(sizeof(struct node));
+    second=(struct node*)malloc(sizeof(struct node));
+    third=(struct node*)malloc(sizeof(struct node));
+    j=(struct node*)malloc(sizeof(struct node));
+
+    head->data=1;
+    head->next=second;
+    second->data=2;
+    second->next=third;
+    third->data=3;
+    third->next=NULL;
+
+
+    printlist(head);
+    insertn(5,&head);
+    printlist(head);
+    insertn(6,&head);
+    printlist(head);
+
+    insertb(head,10);
+    insertb(head,40);
+    printlist(head);
+    return 0;
+}
