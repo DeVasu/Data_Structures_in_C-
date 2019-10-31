@@ -8,7 +8,7 @@ struct node{
              int data;
              node *next;
 
-             };
+             }z;
 void printlist(node* a)
 {
   while(a!=NULL)
